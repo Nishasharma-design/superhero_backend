@@ -18,6 +18,17 @@ public class Hero {
     @Embedded
     private Images images;
 
+    @Embedded
+    private Appearance appearance;
+
+    @Embedded
+    private Biography biography;
+
+    @Embedded
+    private Work work;
+
+    @Embedded
+    private Connections connections;
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -33,5 +44,16 @@ public class Hero {
 
     public Images getImages() { return images; }
     public void setImages(Images images) { this.images = images; }
-}
 
+    public Appearance getAppearance() { return appearance; }
+    public void setAppearance(Appearance appearance) { this.appearance = appearance; }
+
+    public Biography getBiography() { return biography; }
+    public void setBiography(Biography biography) { this.biography = biography; }
+
+    public Work getWork() { return work; }
+    public void setWork(Work work) { this.work = work; }
+
+    public Connections getConnections() { return connections; }
+    public void setConnections(Connections connections) { this.connections = connections; }
+}

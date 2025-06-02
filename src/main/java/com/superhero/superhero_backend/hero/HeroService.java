@@ -26,6 +26,10 @@ public class HeroService {
         hero.setSlug(heroDTO.getSlug());
         hero.setImages(heroDTO.getImages());
         hero.setPowerstats(heroDTO.getPowerstats());
+        hero.setAppearance(heroDTO.getAppearance());
+        hero.setBiography(heroDTO.getBiography());
+        hero.setWork(heroDTO.getWork());
+        hero.setConnections(heroDTO.getConnections());
         return heroRepository.save(hero);
     }
 
@@ -35,6 +39,10 @@ public class HeroService {
             hero.setSlug(heroDTO.getSlug());
             hero.setImages(heroDTO.getImages());
             hero.setPowerstats(heroDTO.getPowerstats());
+            hero.setAppearance(heroDTO.getAppearance());
+            hero.setBiography(heroDTO.getBiography());
+            hero.setWork(heroDTO.getWork());
+            hero.setConnections(heroDTO.getConnections());
             return heroRepository.save(hero);
         });
     }
@@ -45,4 +53,33 @@ public class HeroService {
             return true;
         }).orElse(false);
     }
+
+
+    public Optional<Hero> getHeroById(Long id) {
+        return heroRepository.findById(id);
+    }
+
+    public Optional<Powerstats> getPowerstatsById(Long id) {
+        return heroRepository.findById(id).map(Hero::getPowerstats);
+    }
+
+    public Optional<Appearance> getAppearanceById(Long id) {
+        return heroRepository.findById(id).map(Hero::getAppearance);
+    }
+
+    public Optional<Work> getWorkById(Long id) {
+        return heroRepository.findById(id).map(Hero::getWork);
+    }
+
+    public Optional<Biography> getBiographyById(Long id) {
+        return heroRepository.findById(id).map(Hero::getBiography);
+    }
+
+    public Optional<Connections> getConnectionsById(Long id) {
+        return heroRepository.findById(id).map(Hero::getConnections);
+    }
+
+   
+
 }
+
